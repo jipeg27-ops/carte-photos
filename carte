@@ -32,13 +32,13 @@
   }).addTo(map);
 
   // --- Exemple : Saint-Martin-Osmonville ---
-  var urlPhotos = "/photos/saint-martin-osmonville.html"; // ton lien interne
+  // var urlPhotos = "/photos/saint-martin-osmonville.html"; // ton lien interne
 
-  var marker = L.marker([49.65, 1.25]).addTo(map);
+  // var marker = L.marker([49.65, 1.25]).addTo(map);
 
-  marker.bindPopup(
-    '<b>Saint-Martin-Osmonville</b><br>' +
-    '<a href="' + urlPhotos + '" target="_blank">Voir les photos</a>'
+  // marker.bindPopup(
+    // '<b>Saint-Martin-Osmonville</b><br>' +
+    //'<a href="' + urlPhotos + '" target="_blank">Voir les photos</a>'
   );
 </script>
 
