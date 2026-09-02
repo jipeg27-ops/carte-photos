@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Carte de France - Mes Photos</title>
+
+  <link rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <style>
+    #map {
+      height: 600px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Carte de France – Accès aux photos</h2>
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+  // Carte centrée sur la France
+  var map = L.map('map').setView([46.8, 2.5], 6);
+
+  // Fond de carte
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
+
+  // --- Exemple : Saint-Martin-Osmonville ---
+  var urlPhotos = "/photos/saint-martin-osmonville.html"; // ton lien interne
+
+  var marker = L.marker([49.65, 1.25]).addTo(map);
+
+  marker.bindPopup(
+    '<b>Saint-Martin-Osmonville</b><br>' +
+    '<a href="' + urlPhotos + '" target="_blank">Voir les photos</a>'
+  );
+</script>
+
+</body>
+</html>
