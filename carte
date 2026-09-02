@@ -2,12 +2,24 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Carte de France - Mes Photos</title>
+  <title>Carte de France - Photos jipeg76.fr</title>
 
-  <link rel="stylesheet"
-        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
 
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      margin: 10px 0;
+    }
     #map {
       height: 600px;
       width: 100%;
@@ -16,29 +28,30 @@
 </head>
 <body>
 
-<h2>Carte de France – Accès aux photos</h2>
+<h1>Carte de France – Accès à mes photos</h1>
 <div id="map"></div>
 
+<!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
   // Carte centrée sur la France
   var map = L.map('map').setView([46.8, 2.5], 6);
 
-  // Fond de carte
+  // Fond de carte OpenStreetMap
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '© OpenStreetMap'
   }).addTo(map);
 
-  // --- Exemple : Saint-Martin-Osmonville ---
-  // var urlPhotos = "/photos/saint-martin-osmonville.html"; // ton lien interne
+  // Marqueur sur Saint-Martin-Osmonville
+  var urlPhotos = "https://www.jipeg76.fr"; // lien vers ton site photo
 
-  // var marker = L.marker([49.65, 1.25]).addTo(map);
+  var marker = L.marker([49.65, 1.25]).addTo(map);
 
-  // marker.bindPopup(
-    // '<b>Saint-Martin-Osmonville</b><br>' +
-    //'<a href="' + urlPhotos + '" target="_blank">Voir les photos</a>'
+  marker.bindPopup(
+    '<b>Saint-Martin-Osmonville</b><br>' +
+    '<a href="' + urlPhotos + '" target="_blank">Voir les photos</a>'
   );
 </script>
 
